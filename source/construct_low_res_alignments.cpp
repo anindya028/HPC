@@ -7,7 +7,7 @@
 
 using namespace std;
 
-#define MXN 100
+#define MXN 200
 #define SZ 5000000	// 5*10^6
 
 char buf[1000005];
