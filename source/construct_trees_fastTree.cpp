@@ -12,7 +12,7 @@ int main(int argc, char* argv[]) {
 	
 	char system_call_string[5000];
 	for (int i = 1; i <= g; i++) {
-		sprintf(system_call_string, "%s -nt -gtr < group_%.2d_alignment_sampled_with_rep.fasta > group_%.2d_sampled_fastTree_with_rep.nwk", program_path, i, i);
+		sprintf(system_call_string, "%s -nt -gtr < group_%.2d_alignment_sampled.fasta > group_%.2d_FastTree.nwk", program_path, i, i);
 		system(system_call_string);
 	}
 	return 0;
