@@ -121,21 +121,16 @@ int main(int argc, char * argv[]) {
 		fprintf(stderr, "%s input_fasta_filename group_filename_for_low_resolution\n\n", argv[0]);
 		exit(1);
 	}	
-	char system_call_string[15236];
-	char first_isolate[105], rest_isolates[12345];
+	char system_call_string[10005];
+	char all_isolates[10005];
 	FILE* fpi = fopen(argv[2], "r");
 	int g = 0;
 	sample_size = 10000;
 	while (fgets(buf, sizeof(buf), fpi)) {
-		for(int i = 0; buf[i]; i++) 
-			if (buf[i] == ',')	
-			{
-				buf[i] = ' ';
-				break;
-			}
-		sscanf(buf, "%s %s", first_isolate, rest_isolates);
+
+		sscanf(buf, "%s", all_isolates);
 		g++;
-		sprintf(system_call_string,"./partial_align_seq %s %s group_%.2d_alignment.fasta", argv[1], rest_isolates, g);
+		sprintf(system_call_string,"./partial_align_seq %s %s group_%.2d_alignment.fasta", argv[1], all_isolates, g);
 		int ret_system = system(system_call_string);
 		
 		sample_columns(g);
