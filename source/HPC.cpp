@@ -12,15 +12,16 @@
 
 using namespace std;
 
-#define SZ 1000005	// maximum length of alignment
-#define MXN 900
+#define SZ 5000005	// maximum length of alignment
+#define MXN 20000
 
 int num_bootstrap;  	// number of bootstrap iterations
 int num_threads;	// number of threads
 int n;			// number of isolates
 int C;			// number of columns, i.e. length of alignment
 int sample_size; 
-char seq[MXN][SZ];
+//char seq[MXN][SZ];
+char **seq;
 char full_path_raxml[10005];	// path of raxml executable
 vector<char> flag;
 vector<string> names_taxa;  // beginning with '>' and ending with '\n' 
@@ -37,6 +38,26 @@ int seq_distance(int i, int j) {
 		if( seq[i][k] != seq[j][k])
 			sum++;
 	return sum;
+}
+
+void initialize() {
+	char system_call_string[5005];
+	
+	sprintf(system_call_string, "grep \">\" %s | wc > size.txt", input_fasta_filename);
+	int ret_system = system(system_call_string);
+
+	sprintf(system_call_string, "wc %s >> size.txt", input_fasta_filename);
+	ret_system = system(system_call_string);
+
+	int garb[5], tot;
+	FILE* fpi = fopen("size.txt", "r");
+	fscanf(fpi, "%d%d%d%d%d%d", &n, &garb[0], &garb[1], &garb[2], &garb[3], &tot);
+	fclose(fpi);
+
+	seq = (char **)malloc(n * sizeof(int *));
+	for (int i = 0; i < n; i++)
+		seq[i] = (char *)malloc((tot/n) * sizeof(char));
+
 }
 
 void read_fasta() {
@@ -282,6 +303,11 @@ void build_samples(int K) {
 		}
         	int ret_system = system(system_call_string);
 	}
+
+	for (int j = 0; j < n; j++)
+                free(seq[j]);
+        free(seq);
+
 	if (tree_cons_prog == 'R') 
 		sprintf(system_call_string, "cat RAxML_bestTree.tree_from_sample_* > trees_all_sample.txt");
 	else if (tree_cons_prog == 'I')
@@ -444,9 +470,12 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
-	strcpy(full_path_raxml, argv[1]);
-	// read the fasta file, i.e. alignment 
+	strcpy(full_path_raxml, argv[1]); 
 	strcpy(input_fasta_filename, argv[2]);
+	
+	initialize();
+
+	// read the fasta file, i.e. alignment
 	read_fasta();
 		
 	// select candidate isolates by marking the flag array
