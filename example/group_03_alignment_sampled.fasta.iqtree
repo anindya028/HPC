@@ -1,0 +1,114 @@
+IQ-TREE 1.6.6 built Jul  1 2018
+
+Input file name: group_03_alignment_sampled.fasta
+Type of analysis: tree reconstruction
+Random seed number: 988665
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Lam-Tung Nguyen, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh
+(2015) IQ-TREE: A fast and effective stochastic algorithm for estimating
+maximum likelihood phylogenies. Mol Biol Evol, 32:268-274.
+https://doi.org/10.1093/molbev/msu300
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 11 sequences with 761 nucleotide sites
+Number of constant sites: 0 (= 0% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 0 (= 0% of all sites)
+Number of parsimony informative sites: 531
+Number of distinct site patterns: 414
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+G4
+
+Rate parameter R:
+
+  A-C: 1.1000
+  A-G: 0.9923
+  A-T: 0.8729
+  C-G: 0.8675
+  C-T: 1.0273
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.2595
+  pi(C) = 0.2562
+  pi(G) = 0.2482
+  pi(T) = 0.2361
+
+Rate matrix Q:
+
+  A    -1.002    0.3846    0.3361    0.2812
+  C    0.3895    -1.014    0.2938    0.3309
+  G    0.3513    0.3033   -0.9767    0.3221
+  T     0.309    0.3592    0.3387    -1.007
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 998.4
+
+ Category  Relative_rate  Proportion
+  1         0.9601         0.25
+  2         0.9894         0.25
+  3         1.01           0.25
+  4         1.041          0.25
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -5525.9626 (s.e. 21.7575)
+Unconstrained log-likelihood (without tree): -4449.0512
+Number of free parameters (#branches + #model parameters): 28
+Akaike information criterion (AIC) score: 11107.9253
+Corrected Akaike information criterion (AICc) score: 11110.1439
+Bayesian information criterion (BIC) score: 11237.6950
+
+Total tree length (sum of branch lengths): 3.4860
+Sum of internal branch lengths: 0.7319 (20.9961% of tree length)
+
+WARNING: 1 near-zero internal branches (<0.0013) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'Taxon14' is drawn at root
+
++----------------------------------------------------------Taxon14
+|
+|     +--Taxon52
+|  +--|
+|  |  +--Taxon53
++**|
+|  +**Taxon51
+|
+|     +--Taxon60
++-----|
+      |        +--Taxon58
+      |     +--|
+      |     |  +--Taxon59
+      |  +--|
+      |  |  +--Taxon57
+      +--|
+         |     +--Taxon55
+         |  +--|
+         |  |  +--Taxon56
+         +--|
+            +--Taxon54
+
+Tree in newick format:
+
+(Taxon14:2.3623406594,((Taxon52:0.0825120777,Taxon53:0.0120567977):0.0693014290,Taxon51:0.0000023084):0.0000020271,(Taxon60:0.0013482779,(((Taxon58:0.1029087464,Taxon59:0.0819923656):0.0124260316,Taxon57:0.0231202754):0.1219550589,((Taxon55:0.0534404393,Taxon56:0.0177089168):0.1040590973,Taxon54:0.0166384216):0.0837432633):0.0673498234):0.2730873282);
+
+TIME STAMP
+----------
+
+Date and time: Mon Jan  7 13:12:40 2019
+Total CPU time used: 26.2046 seconds (0h:0m:26s)
+Total wall-clock time used: 2.65396 seconds (0h:0m:2s)
+
