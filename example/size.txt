@@ -1,0 +1,2 @@
+     16      16     144
+  320   320 20976 merged_alignment_group_4_75_isolates_case_03_len_1000000.fasta

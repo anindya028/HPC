@@ -1,0 +1,4 @@
+Taxon04,Taxon26,Taxon27,Taxon28,Taxon29,Taxon31,Taxon32,Taxon30,Taxon33,Taxon34,Taxon35
+Taxon05,Taxon36,Taxon37,Taxon38,Taxon39,Taxon40,Taxon41,Taxon44,Taxon45,Taxon46,Taxon42,Taxon43,Taxon47,Taxon48,Taxon49,Taxon50
+Taxon14,Taxon52,Taxon53,Taxon51,Taxon60,Taxon58,Taxon59,Taxon57,Taxon55,Taxon56,Taxon54
+Taxon25,Taxon67,Taxon66,Taxon64,Taxon65,Taxon62,Taxon63,Taxon61,Taxon68,Taxon69,Taxon71,Taxon72,Taxon70,Taxon74,Taxon75,Taxon73
